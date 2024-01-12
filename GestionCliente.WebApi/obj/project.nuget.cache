@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rYcji6EGMMScal2aUpSYNBFGkh9guhJebnnO84agFriiIDjWwtJUFNgN5Yky/VxOFUqnMeAaEqPGzGOYIwVuhQ==",
+  "dgSpecHash": "VdczeBJKpwpy0jowGJM5fI0lrly58fL2JxatKUwgYorRYfYsw7zI1I/jEdOYqU2OFk5PHrDMQEFYqyyUdPzTag==",
   "success": true,
-  "projectFilePath": "D:\\DESARROLLO\\SERVICIOS\\GestionClienteAPI\\GestionClienteAPI.csproj",
+  "projectFilePath": "D:\\DESARROLLO\\SERVICIOS\\GestionClienteAPI\\GestionCliente.WebApi\\GestionClienteAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DESARROLLO\\SERVICIOS\\GestionClienteAPI\\GestionClienteAPI.csproj": {}
+    "D:\\DESARROLLO\\SERVICIOS\\GestionClienteAPI\\GestionCliente.DAL\\GestionCliente.DAL.csproj": {}
   },
   "projects": {
-    "D:\\DESARROLLO\\SERVICIOS\\GestionClienteAPI\\GestionClienteAPI.csproj": {
+    "D:\\DESARROLLO\\SERVICIOS\\GestionClienteAPI\\GestionCliente.DAL\\GestionCliente.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DESARROLLO\\SERVICIOS\\GestionClienteAPI\\GestionClienteAPI.csproj",
-        "projectName": "GestionClienteAPI",
-        "projectPath": "D:\\DESARROLLO\\SERVICIOS\\GestionClienteAPI\\GestionClienteAPI.csproj",
+        "projectUniqueName": "D:\\DESARROLLO\\SERVICIOS\\GestionClienteAPI\\GestionCliente.DAL\\GestionCliente.DAL.csproj",
+        "projectName": "GestionCliente.DAL",
+        "projectPath": "D:\\DESARROLLO\\SERVICIOS\\GestionClienteAPI\\GestionCliente.DAL\\GestionCliente.DAL.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\DESARROLLO\\SERVICIOS\\GestionClienteAPI\\obj\\",
+        "outputPath": "D:\\DESARROLLO\\SERVICIOS\\GestionClienteAPI\\GestionCliente.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,12 +39,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.4.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -57,14 +51,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
