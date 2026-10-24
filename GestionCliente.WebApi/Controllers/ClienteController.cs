@@ -1,32 +1,41 @@
 ﻿using GestionCliente.BL;
-using GestionCliente.Model;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Zurich.Cotizador.Controllers;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace GestionClienteAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClienteController(IConfiguration _configuration) : BaseController(_configuration)
+    [Authorize]
+    [EnableRateLimiting("PorCliente")]
+    public class ClienteController(NegCliente negCliente) : ControllerBase
     {
-        private readonly IConfiguration configuration = _configuration;
+        [HttpGet("GetDatosCliente")]
+        public async Task<IActionResult> GetDatosCliente([FromQuery] int rutCliente)
+        {
+            if (rutCliente <= 0)
+            {
+                return BadRequest(new { Mensaje = "El parámetro rutCliente debe ser un entero positivo." });
+            }
 
-        [HttpGet]
-        [Route("GetDatosCliente")]
-        public async Task<IActionResult> GetDatosCliente(int rutCliente) { 
-            Cliente objCliente= new Cliente();
-            NegCliente objNeg= new NegCliente(configuration);
+            try
+            {
+                var cliente = await negCliente.GetDatosCliente(rutCliente);
 
-            try { 
-                objCliente= await objNeg.GetDatosCliente(rutCliente);
-                return Ok(objCliente);
-            } 
-            catch {
-                return BadRequest(error: new { Mensaje = "Error en proceso de obtención de datos de cliente." });
+                if (cliente is null)
+                {
+                    return NotFound(new { Mensaje = $"No se encontraron datos para el rut {rutCliente}." });
+                }
+
+                return Ok(cliente);
+            }
+            catch
+            {
+                return StatusCode(
+                    StatusCodes.Status500InternalServerError,
+                    new { Mensaje = "Error en proceso de obtención de datos de cliente." });
             }
         }
-       
     }
 }

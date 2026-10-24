@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestionClienteAPI", "GestionClienteAPI.csproj", "{EF365332-6C03-4741-B469-A0D356665F14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestionClienteAPI", "GestionCliente.WebApi\GestionClienteAPI.csproj", "{EF365332-6C03-4741-B469-A0D356665F14}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestionCliente.DAL", "..\GestionCliente.DAL\GestionCliente.DAL.csproj", "{2987EDD6-9482-4E59-A13E-1D0851B5711F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestionCliente.DAL", "GestionCliente.DAL\GestionCliente.DAL.csproj", "{2987EDD6-9482-4E59-A13E-1D0851B5711F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionCliente.Model", "..\GestionCliente.Model\GestionCliente.Model.csproj", "{A6280387-CDB6-49D8-BBD8-D37BAF307050}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionCliente.Model", "GestionCliente.Model\GestionCliente.Model.csproj", "{A6280387-CDB6-49D8-BBD8-D37BAF307050}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionCliente.BL", "..\GestionCliente.BL\GestionCliente.BL.csproj", "{5C108EE2-0C4D-4962-81BB-4E75DF47BB8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionCliente.BL", "GestionCliente.BL\GestionCliente.BL.csproj", "{5C108EE2-0C4D-4962-81BB-4E75DF47BB8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

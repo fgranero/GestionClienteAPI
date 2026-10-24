@@ -1,40 +1,31 @@
 ﻿using GestionCliente.Model;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace GestionCliente.DAL
 {
-    public class DatCliente
+    public class DatCliente(ApplicationDbPlanexContext contextoBD, ILogger<DatCliente> logger)
     {
-        private readonly IConfiguration configuration;
-
-        public DatCliente(IConfiguration _configuration)
-        {
-            configuration = _configuration;
-        }
-
         /// <summary>
         /// Descripción: Método que enlaza a BD para obtener datos de cliente.
         /// </summary>
         /// <param name="rutCliente"></param>
         /// <returns></returns>
-        public async Task<Cliente> GetDatosCliente(int rutCliente) { 
-            Cliente? objCliente = new Cliente();
-
+        public async Task<Cliente?> GetDatosCliente(int rutCliente)
+        {
             try
             {
-                using (var contextoBD = new ApplicationDbPlanexContext(configuration))
-                {
-                    //conexion con sp que obtiene datos de cliente
-                    var queryCliente = await contextoBD.Cliente.FromSqlInterpolated($"exec sp_consulta_cliente @rut_cliente={rutCliente}").ToListAsync();
-                    
-                    objCliente=queryCliente.FirstOrDefault();
-                }
+                var queryCliente = await contextoBD.Cliente
+                    .FromSqlInterpolated($"exec sp_consulta_cliente @rut_cliente={rutCliente}")
+                    .ToListAsync();
+
+                return queryCliente.FirstOrDefault();
             }
-            catch(Exception e) {
-                objCliente = null;
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Error en la base de datos al consultar los datos del cliente {Rut}.", rutCliente);
+                throw;
             }
-            return objCliente;
         }
     }
 }
